@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
-
+import './styles/base.css'
+// import './styles/comment-app.css'
 const COMMENT = '__comment-comments__';
 
 class CommentApp extends Component {

@@ -37,14 +37,16 @@ class RegistrationForm extends Component{
                 }
             }
             if (!isExist) {
-                newArr.push({username: this.state.username, password: this.state.password});
-                localStorage.setItem('users', JSON.stringify(newArr));
-                this.setState({
+               this.setState({
                     isSubmitted: true,
 
                 })
+                newArr.push({username: this.state.username, password: this.state.password,status:'loggedIn'});
+                localStorage.setItem('users', JSON.stringify(newArr));
                  this.navigateToLogin();
             } else {
+
+
                 alert("User already exist");
 
             }

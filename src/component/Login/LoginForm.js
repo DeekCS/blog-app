@@ -1,5 +1,5 @@
 import React from 'react'
-import './home.css'
+// import './home.css'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {Link} from "react-router-dom";
@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
         if (user) {
             this.setState({LoggedInID: user.id, isSubmitted:true})
             console.log("Successfully")
-            window.location.href = "/post";
+            this.props.history.push('/post');
         }
         else {
             alert("Invalid username or password");

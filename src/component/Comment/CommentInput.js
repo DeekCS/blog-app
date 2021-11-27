@@ -85,22 +85,23 @@ class CommentInput extends Component {
                     />
                 </div>
                 <div className="comment">
-                    <label>Enter comment:</label>
+                    <label>Enter comment</label>
                     <textarea
-                        className="border"
+                        className="border btn btn-normal pull-right"
                         ref={(textarea) => (this.textarea = textarea)}
                         value={comment}
                         onChange={this.handleCommentChange}
                     />
                 </div>
                 <div className="release clearfix">
-                    <button className="fr border" onClick={this.handleComment}>
-                        post
-                    </button>
+                    <button className="" onClick={this.handleComment}>add</button>
                 </div>
             </div>
         );
     }
 }
+/*
 
+
+ */
 export default CommentInput;

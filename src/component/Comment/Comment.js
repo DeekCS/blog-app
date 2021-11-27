@@ -26,7 +26,7 @@ class Comment extends Component {
         this.setState({
             commentTime:
                 duration > 3600
-                    ? `${Math.round(duration / 3600)}An hour ago`
+                    ? `${Math.round(duration / 3600)} hour ago`
                     : duration > 60
                         ? `${Math.round(duration / 60)}minutes ago`
                         : `${Math.round(Math.max(duration, 1))}Seconds ago`,
