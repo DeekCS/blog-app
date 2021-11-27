@@ -30,8 +30,22 @@ class Nav extends Component {
     //show link s if user is logged in
 
     handleLogin(e) {
-        localStorage.getItem("user") ? this.setState({ isLoggedIn: false }) : this.setState({ isLoggedIn: true });
-
+        if (this.state.isLoggedIn) {
+            return (
+                <Navigation.LinkContainer>
+                    <Navigation.Link to="/profile">Profile</Navigation.Link>
+                    <Navigation.Link to="/logout">Logout</Navigation.Link>
+                </Navigation.LinkContainer>
+            );
+        } else {
+            return (
+                <Navigation.LinkContainer>
+                    <Navigation.Link to="/login">Login</Navigation.Link>
+                    <Navigation.Link to="/signup">Signup</Navigation.Link>
+                </Navigation.LinkContainer>
+            );
+        }
+        // localStorage.getItem("user") ? this.setState({ isLoggedIn: false }) : this.setState({ isLoggedIn: true });
     }
 
     //logout user
@@ -52,7 +66,7 @@ class Nav extends Component {
             <Navigation>
                 <div className="logo">
                     <Link to="/">
-                        <p>Abdulkareem</p>
+                        <p>Abdulkareem's Blog</p>
                         <em>
                             <div className="letterhead">
                                 <span className="name">deek</span>
@@ -69,14 +83,15 @@ class Nav extends Component {
                     />
                     <ul className={`collapsed ${isExpanded ? "is-expanded" : ""}`}>
                         <NavLink activeClassName="active" to="/">
-                            <li>home</li>
+                            <li>HOME</li>
                         </NavLink>
                         <NavLink activeClassName="active" to="/post">
-                            <li>Blog</li>
+                            <li>BLOG</li>
                         </NavLink>
                         <NavLink activeClassName="active" to="/login">
-                            {this.handleLogin ? <li>Logout</li> :  <li>Login</li>}
+                            <li>LOGIN</li>
                         </NavLink>
+
                     </ul>
                 </nav>
             </Navigation>

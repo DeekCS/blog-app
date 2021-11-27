@@ -1,6 +1,7 @@
 import React from 'react';
 import './banner.css'
 import BlogCards from "../BlogCards/BlogCards";
+import {Link} from "react-router-dom";
 function Banner() {
     return (
         <>
@@ -9,7 +10,7 @@ function Banner() {
             <div className="container position-relative aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
                 <h1>Welcome to My Blog</h1>
                 <h2>Here i will share some of my daily things</h2>
-                <a href="/" className="btn-get-started scrollto">Get Started</a>
+                <Link to="/post" className="btn-get-started scrollto">Get Started</Link>
             </div>
             </div>
         </section>
